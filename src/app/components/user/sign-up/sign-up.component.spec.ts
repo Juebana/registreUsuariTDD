@@ -38,6 +38,6 @@ describe('SignUpComponent', () => {
 
   it('Has label for Password', () => {
     const compiled:HTMLElement = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelectorAll('label')[1]?.textContent).toBe('Password:');
+    expect(compiled.querySelectorAll('label')[2]?.textContent).toBe('Password:');
   });
 });
