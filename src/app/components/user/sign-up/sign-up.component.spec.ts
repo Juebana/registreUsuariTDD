@@ -39,10 +39,6 @@ describe('SignUpComponent', () => {
     expect(getNthLabelContent(2).textContent).toBe('Password: ');
   });
 
-  function getNthLabelContent(index:number){
-    return compiled.querySelectorAll('label')[index];
-  };
-
   it('Has input of type text for Username', () => {
     const inputUserName:HTMLInputElement|null = (getInputFromLabel(0));
     expect(inputUserName!.getAttribute('type')).toBe('text');
@@ -58,7 +54,17 @@ describe('SignUpComponent', () => {
     expect(inputPassword!.getAttribute('type')).toBe('password');
   });
 
+  it('Has select tag for language', () => {
+    const selectLanguage:HTMLSelectElement|null = getNthLabelContent(3)!.querySelector('select');
+    expect(selectLanguage).toBeTruthy();
+  });
+
+  function getNthLabelContent(index:number){
+    return compiled.querySelectorAll('label')[index];
+  };
+
   function getInputFromLabel(index:number){
     return getNthLabelContent(index)!.querySelector("input");
   };
+
 });
