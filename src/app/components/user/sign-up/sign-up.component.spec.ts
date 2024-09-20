@@ -39,6 +39,10 @@ describe('SignUpComponent', () => {
     expect(getNthLabelContent(2).textContent).toBe('Password: ');
   });
 
+  it('Has label for Language', () => {
+    expect(getNthLabelContent(2).textContent).toBe('Language: ');
+  });
+
   it('Has input of type text for Username', () => {
     const inputUserName:HTMLInputElement|null = (getInputFromLabel(0));
     expect(inputUserName!.getAttribute('type')).toBe('text');
