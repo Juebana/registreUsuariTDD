@@ -44,6 +44,7 @@ describe('SignUpComponent', () => {
   };
 
   it('Has input of type text for Username', () => {
-    const inputUserName:HTMLElement|null = (getNthLabelContent(0)!.querySelector("input"));
+    const inputUserName:HTMLInputElement|null = (getNthLabelContent(0)!.querySelector("input"));
+    expect(inputUserName!.getAttribute('type')).toBe('text');
   });
 });
