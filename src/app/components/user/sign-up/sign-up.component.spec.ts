@@ -28,7 +28,7 @@ describe('SignUpComponent', () => {
   });
 
   it('Has label for Username', () => {
-    expect(getNthLabelContent(0).textContent).toBe('Username:');
+    expect(getNthLabelContent(0).textContent).toBe('Username: ');
   });
 
   it('Has label for Email', () => {
