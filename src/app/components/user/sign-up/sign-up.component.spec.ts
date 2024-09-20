@@ -47,4 +47,9 @@ describe('SignUpComponent', () => {
     const inputUserName:HTMLInputElement|null = (getNthLabelContent(0)!.querySelector("input"));
     expect(inputUserName!.getAttribute('type')).toBe('text');
   });
+
+  it('Has input of type text for Email', () => {
+    const inputUserName:HTMLInputElement|null = (getNthLabelContent(1)!.querySelector("input"));
+    expect(inputUserName!.getAttribute('type')).toBe('text');
+  });
 });
