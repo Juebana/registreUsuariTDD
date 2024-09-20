@@ -36,7 +36,7 @@ describe('SignUpComponent', () => {
   });
 
   it('Has label for Password', () => {
-    expect(getNthLabelContent(2).textContent).toBe('Password:');
+    expect(getNthLabelContent(2).textContent).toBe('Password: ');
   });
 
   function getNthLabelContent(index:number){
