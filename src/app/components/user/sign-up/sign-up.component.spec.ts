@@ -32,7 +32,7 @@ describe('SignUpComponent', () => {
   });
 
   it('Has label for Email', () => {
-    expect(getNthLabelContent(1).textContent).toBe('Email:');
+    expect(getNthLabelContent(1).textContent).toBe('Email: ');
   });
 
   it('Has label for Password', () => {
