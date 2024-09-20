@@ -40,7 +40,7 @@ describe('SignUpComponent', () => {
   });
 
   it('Has label for Language', () => {
-    expect(getNthLabelContent(3).textContent).toBe('Language: ');
+    expect(getNthLabelContent(3).textContent).toContain('Language: ');
   });
 
   it('Has input of type text for Username', () => {
