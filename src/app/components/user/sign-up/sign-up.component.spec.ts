@@ -44,12 +44,16 @@ describe('SignUpComponent', () => {
   };
 
   it('Has input of type text for Username', () => {
-    const inputUserName:HTMLInputElement|null = (getNthLabelContent(0)!.querySelector("input"));
+    const inputUserName:HTMLInputElement|null = (getInputFromLabel(0));
     expect(inputUserName!.getAttribute('type')).toBe('text');
   });
 
   it('Has input of type text for Email', () => {
-    const inputUserName:HTMLInputElement|null = (getNthLabelContent(1)!.querySelector("input"));
+    const inputUserName:HTMLInputElement|null = (getInputFromLabel(1));
     expect(inputUserName!.getAttribute('type')).toBe('text');
   });
+
+  function getInputFromLabel(index:number){
+    return getNthLabelContent(index)!.querySelector("input");
+  };
 });
