@@ -40,7 +40,7 @@ describe('SignUpComponent', () => {
   });
 
   it('Has label for Language', () => {
-    expect(getNthLabelContent(2).textContent).toBe('Language: ');
+    expect(getNthLabelContent(3).textContent).toBe('Language: ');
   });
 
   it('Has input of type text for Username', () => {
@@ -61,6 +61,19 @@ describe('SignUpComponent', () => {
   it('Has select tag for language', () => {
     const selectLanguage:HTMLSelectElement|null = getNthLabelContent(3)!.querySelector('select');
     expect(selectLanguage).toBeTruthy();
+  });
+
+  it('Language avariable: frances, angles, italia, catala, castella. Ordenats', () => {
+    const languages=['français', 'anglais', 'italien', 'catalan', 'castellano'].sort();
+    const selectLanguage:HTMLSelectElement = getNthLabelContent(3)!.querySelector('select')!;
+    expect(selectLanguage?.options.length).toBe(languages.length);
+    let index=0;
+    languages.forEach(
+      language => {
+        expect(selectLanguage.options[index].value).toBe(language);
+        index++;
+      }
+    )
   });
 
   function getNthLabelContent(index:number){
