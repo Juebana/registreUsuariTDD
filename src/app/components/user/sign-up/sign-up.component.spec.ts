@@ -76,6 +76,12 @@ describe('SignUpComponent', () => {
     )
   });
 
+  it('Has button Sign Up', () => {
+    const buttonSignUp:HTMLButtonElement|null = compiled.querySelector('button');
+    expect(buttonSignUp).toBeTruthy();
+    expect(buttonSignUp?.textContent).toBe('Sign Up');
+  });
+
   function getNthLabelContent(index:number){
     return compiled.querySelectorAll('label')[index];
   };
