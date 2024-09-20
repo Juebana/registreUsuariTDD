@@ -53,6 +53,11 @@ describe('SignUpComponent', () => {
     expect(inputUserName!.getAttribute('type')).toBe('text');
   });
 
+  it('Has input of type password for Password', () => {
+    const inputPassword:HTMLInputElement|null = (getInputFromLabel(2));
+    expect(inputPassword!.getAttribute('type')).toBe('password');
+  });
+
   function getInputFromLabel(index:number){
     return getNthLabelContent(index)!.querySelector("input");
   };
