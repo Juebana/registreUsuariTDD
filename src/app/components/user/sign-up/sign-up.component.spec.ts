@@ -88,6 +88,18 @@ describe('SignUpComponent', () => {
 });
 
 describe('buttonComponent', () => {
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [SignUpComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(SignUpComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+    compiled=fixture.nativeElement as HTMLElement;
+  });
   
   it('Has button Sign Up', () => {
     const buttonSignUp:HTMLButtonElement|null = compiled.querySelector('button');

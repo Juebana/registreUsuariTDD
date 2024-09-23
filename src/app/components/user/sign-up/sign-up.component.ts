@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './sign-up.component.css'
 })
 export class SignUpComponent {
+  isButtonDisabled = true;
   getLanguages(): string[] {
     return ['français', 'anglais', 'italien', 'catalan', 'castellano'].sort();
   }
