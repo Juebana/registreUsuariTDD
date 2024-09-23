@@ -2,10 +2,19 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SignUpComponent } from './sign-up.component';
 
+let component: SignUpComponent;
+let fixture: ComponentFixture<SignUpComponent>;
+let compiled:HTMLElement;
+
+function getNthLabelContent(index:number){
+  return compiled.querySelectorAll('label')[index];
+};
+
+function getInputFromLabel(index:number){
+  return getNthLabelContent(index)!.querySelector("input");
+};
+
 describe('SignUpComponent', () => {
-  let component: SignUpComponent;
-  let fixture: ComponentFixture<SignUpComponent>;
-  let compiled:HTMLElement;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -76,18 +85,14 @@ describe('SignUpComponent', () => {
     )
   });
 
+});
+
+describe('buttonComponent', () => {
+  
   it('Has button Sign Up', () => {
     const buttonSignUp:HTMLButtonElement|null = compiled.querySelector('button');
     expect(buttonSignUp).toBeTruthy();
     expect(buttonSignUp?.textContent).toBe('Sign Up');
   });
-
-  function getNthLabelContent(index:number){
-    return compiled.querySelectorAll('label')[index];
-  };
-
-  function getInputFromLabel(index:number){
-    return getNthLabelContent(index)!.querySelector("input");
-  };
-
-});
+  
+})
