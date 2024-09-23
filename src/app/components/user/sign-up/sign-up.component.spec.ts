@@ -111,4 +111,20 @@ describe('buttonComponent', () => {
     const buttonSignUp:HTMLButtonElement|null = compiled.querySelector('button');
     expect(buttonSignUp?.disabled).toBeTruthy();
   })
+
+  it('Button enabled when all data is filled correctly', () => {
+    const inputUsername:HTMLInputElement|null = (getInputFromLabel(0));
+    inputUsername!.value='user123';
+    const inputEmail:HTMLInputElement|null = (getInputFromLabel(1));
+    inputEmail!.value='user123@gmail.com';
+    const inputPassword:HTMLInputElement|null = (getInputFromLabel(2));
+    inputPassword!.value='password123';
+    const languages=['français', 'anglais', 'italien', 'catalan', 'castellano'].sort();
+    const selectLanguage:HTMLSelectElement|null = getNthLabelContent(3)!.querySelector('select');
+    selectLanguage!.value=languages[2];
+    fixture.detectChanges();
+    const buttonSignUp:HTMLButtonElement|null = compiled.querySelector('button');
+    expect(buttonSignUp?.disabled).toBeFalsy();
+  })
+
 })
