@@ -94,5 +94,9 @@ describe('buttonComponent', () => {
     expect(buttonSignUp).toBeTruthy();
     expect(buttonSignUp?.textContent).toBe('Sign Up');
   });
-  
+
+  it('Button disabled by default', () => {
+    const buttonSignUp:HTMLButtonElement|null = compiled.querySelector('button');
+    expect(buttonSignUp?.disabled).toBeTruthy();
+  })
 })
